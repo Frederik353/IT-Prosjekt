@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+< lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- https://iconscout.com/unicons -->
+  <link
+  rel="stylesheet"
+  href="https://unicons.iconscout.com/release/v3.0.3/css/solid.css"
+  />
+  <link
+  rel="stylesheet"
+  href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/unicons.css"
+  />
+  <link rel="stylesheet" href="./CSS/Main.css" />
+  <!-- soleil font -->
+  <link rel="stylesheet" href="https://use.typekit.net/qmt2sfg.css" />
+  <!-- jquery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script type="text/javascript" src="./Javascript/main.js"></script>
+  <script type="text/javascript" src="./javascript/articles.js"></script>
+
+  <title>Frederik sin nettside</title>
+  <link rel="icon" href="./Pictures/technical-support.png" />
+</head>
+<!-- classene dark og default hjelper med å endre mellom darkmode og default mode -->
+<body id="body" class="default">
+  <!-- navbar -->
+  <nav class="navbar">
+    <a href="./index.html" class="logo">
+      <img src="./Pictures/technical-support.svg" alt="logo" />
+    </a>
+    <ul class="nav-links">
+      <li class="nav-item"><a href="#">Home</a></li>
+      <li class="nav-item"><a href="./articles.html">Articles</a></li>
+      <li class="nav-item">
+        <input type="text" id="search-bar" placeholder="Search..." />
+      </li>
+      <li class="nav-item">
+        <button
+          type="button"
+          class="btn-darkmode"
+          id="toggle-theme"
+          onclick="darkmode()"
+        >
+          Dark
+        </button>
+      </li>
+      <li class="nav-item" id="login-button"><a href="./login.html">Login</a></li>
+    </ul>
+  </nav>
+  <!-- øverste del av siden -->
+  <div class="hero">
+    <div class="container">
+      <header class="header">
+        <h1>Lorem ipsum <strong color="blue">dolor</strong></h1>
+        <h2>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo, vel
+          qui. Consequatur provident illo cumque nesciunt consequuntur.
+        </h2>
+        <a href="./login.html" class="btn">Start learning</a>
+      </header>
+      <video
+        preload="auto"
+        autoplay="autoplay"
+        muted="muted"
+        playsinline=""
+        loop="loop"
+      >
+        <source
+          src="./Pictures/istockphoto-1046965704-640_adpp_is.mp4"
+          type="video/mp4"
+          data-v-2f341e76=""
+        />
+      </video>
+    </div>
+    <div class="divider"></div>
+    <!-- bildehjul-->
+    <div class="container">
+      <div class="carousel">
+        <span id="target-slide01"></span>
+        <span id="target-slide02"></span>
+        <span id="target-slide03"></span>
+
+        <div class="bullets">
+          <a href="#target-slide01" class="bullet bullet01"></a>
+          <a href="#target-slide02" class="bullet bullet02"></a>
+          <a href="#target-slide03" class="bullet bullet03"></a>
+        </div>
+
+        <div class="slide" id="slide01">
+          <a href="#target-slide03" class="slide-nav slide-nav--prev"
+            >&lsaquo;</a
+          >
+          <a href="#target-slide02" class="slide-nav slide-nav--next"
+            >&rsaquo;</a
+          >
+        </div>
+
+        <div class="slide" id="slide02">
+          <a href="#target-slide01" class="slide-nav slide-nav--prev"
+            >&lsaquo;</a
+          >
+          <a href="#target-slide03" class="slide-nav slide-nav--next"
+            >&rsaquo;</a
+          >
+        </div>
+
+        <div class="slide" id="slide03">
+          <a href="#target-slide02" class="slide-nav slide-nav--prev"
+            >&lsaquo;</a
+          >
+          <a href="#target-slide01" class="slide-nav slide-nav--next"
+            >&rsaquo;</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- info bokser -->
+    <div class="list">
+      <!-- skrive effekt -->
+      <h1>
+        Learn about &nbsp
+        <strong color="yellow">
+          <span
+            class="txt-rotate"
+            data-period="2000"
+            data-rotate='[ "HTML", "CSS", "Javascript", "PHP", "SQL","" ]'
+          ></span>
+        </strong>
+      </h1>
+      <div class="container">
+        <div class="box">
+          <img src="./Pictures/1383392-programming/svg/002-server.svg" alt="">
+          <h2>Lorem, ipsum dolor</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore adipisci possimus ipsam culpa in laboriosam?</p>
+        </div>
+        
+        <div class="box">
+          <img src="./Pictures/1383392-programming/svg/024-shield.svg" alt="">
+          <h2>Lorem, ipsum dolor</h2>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus et accusantium doloribus quibusdam harum eveniet pariatur amet.</p>
+        </div>
+        
+        <div class="box">
+          <img src="./Pictures/1383392-programming/svg/008-cpu.svg" alt="">
+          <h2>Lorem, ipsum dolor</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, saepe. Magnam veritatis veniam dolores odio!</p>
+        </div>
+        
+      </div>
+    </div>
+    <div class="container">
+      <div class="card-title">
+        <h1>Popular articles</h1>
+        <h4>Popular articles this month.</h4>
+      </div>
+
+    </div>
+    <section class="card-list">
+      <a href="#">
+        <article class="card">
+          <header class="card-header">
+            <p>Oct 2nd 202</p>
+          </header>
+          <img src="./Pictures/Node.jpg" alt="">
+          <h2>Lorem, ipsum dolor.</h2>
+          <p class="card-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, architecto nihil. Nobis dolorem
+            iste suscipit.</p>
+          <div class="tags">
+            <a class="tag" href="#">node</a>
+            <a class="tag" href="#">js</a>
+          </div>
+        </article>
+      </a>
+
+      <a href="#">
+        <article class="card">
+          <header class="card-header">
+            <p>Oct 2nd 202</p>
+          </header>
+          <img src="./Pictures/java.jpg" alt="">
+          <h2>Lorem, ipsum dolor.</h2>
+          <p class="card-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, architecto nihil. Nobis dolorem
+            iste suscipit.</p>
+          <div class="tags">
+            <a class="tag" href="#">java</a>
+          </div>
+        </article>
+      </a>
+
+      <a href="#">
+        <article class="card">
+          <header class="card-header">
+            <p>Oct 2nd 202</p>
+          </header>
+          <img src="./Pictures/c++.webp" alt="">
+          <h2>Lorem, ipsum dolor.</h2>
+          <p class="card-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, architecto nihil. Nobis dolorem
+            iste suscipit.</p>
+          <div class="tags">
+            <a class="tag" href="#">c++</a>
+          </div>
+        </article>
+      </a> 
+      
+      <a href="#">
+        <article class="card">
+          <header class="card-header">
+            <p>Oct 2nd 202</p>
+          </header>
+          <img src="./Pictures/php.png" alt="">
+          <h2>Lorem, ipsum dolor.</h2>
+          <p class="card-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, architecto nihil. Nobis dolorem
+            iste suscipit.</p>
+          <div class="tags">
+            <a class="tag" href="#">php</a>
+            <a class="tag" href="#">sql</a>
+          </div>
+        </article>
+      </a>
+
+      <a href="#">
+        <article class="card">
+          <header class="card-header">
+            <p>Oct 2nd 202</p>
+          </header>
+          <img src="./Pictures/GO.png" alt="">
+          <h2>Lorem, ipsum dolor.</h2>
+          <p class="card-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, architecto nihil. Nobis dolorem
+            iste suscipit.</p>
+          <div class="tags">
+            <a class="tag" href="#">go</a>
+          </div>
+        </article>
+      </a>
+
+      <a href="#">
+        <article class="card">
+          <header class="card-header">
+            <p>Oct 2nd 202</p>
+          </header>
+          <img src="./Pictures/reactjs.jpg" alt="">
+          <h2>Lorem, ipsum dolor.</h2>
+          <p class="card-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, architecto nihil. Nobis dolorem
+            iste suscipit.</p>
+          <div class="tags">
+            <a class="tag" href="#">react</a>
+            <a class="tag" href="#">js</a>
+          </div>
+        </article>
+      </a>
+
+      <a href="#">
+        <article class="card">
+          <header class="card-header">
+            <p>Oct 2nd 202</p>
+          </header>
+          <img src="./Pictures/Python2.jpg" alt="">
+          <h2>Lorem, ipsum dolor.</h2>
+          <p class="card-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, architecto nihil. Nobis dolorem
+            iste suscipit.</p>
+          <div class="tags">
+            <a class="tag" href="#">python</a>
+            <a class="tag" href="#">tensorflow</a>
+          </div>
+        </article>
+      </a>
+    </section>
+
+  <!-- Footer -->
+    <div class="footer">
+      <ul class="breadcrumb">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#articles">Articles</a></li>
+        <li><a href="#css">CSS</a></li>
+      </ul>
+      <div class="container">
+        <div class="upperfoot">
+          <h2>Subscribe to our newsletter</h2>
+          <input type="text" placeholder="Email address" name="mail" required />
+          <button>Subscribe</button>
+        </div>
+        <div class="upperfoot">
+          <h2>About us</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis
+            rem beatae odio tempore totam numquam maxime iure nulla. Iure,
+            doloremque voluptatibus quae suscipit provident earum quaerat natus.
+            Quo, unde mollitia.
+          </p>
+        </div>
+        <div class="upperfoot">
+          <h2>Contact information</h2>
+          <h3 class="contact-info">+47 798 27 203</h3>
+          <h3 class="contact-info">Lorem.ipsum@gmail.com</h3>
+          <h3 class="contact-info">Sunnlandsvegen 56,</h3>
+          <h3 class="contact-info">Trøndelag, Trondheim</h3>
+        </div>
+      </div>
+      <div class="container footer-divider"></div>
+      <div class="lowerfoot">
+        <div>
+          <p>Copyright ©2020. All rights reserved.</p>
+        </div>
+        <!-- ikoner fra https://iconscout.com/icon-pack/social-media-40 -->
+        <div>
+          <a href="#reddit">
+            <img src="./Pictures/social-media-40/svg/reddit-157-616168.svg" alt="reddit" />
+          </a>
+          <a href="#github">
+            <img src="./Pictures/social-media-40/svg/github-148-616149.svg" alt="github" />
+          </a>
+          <a href="#youtube">
+            <img src="./Pictures/social-media-40/svg/youtube-244-616121.svg" alt="youtube" />
+          </a>
+          <a href="#instagram">
+            <img src="./Pictures/social-media-40/svg/instagram-204-616157.svg" alt="instagram" />
+          </a>
+        </div>
+        <div>
+          <a href="#privacy-policy">Privacy policy</a>
+          <a href="#sitemap">Sitemap</a>
+          <a href="#support">Support</a>
+        </div>
+      </div>
+    </div>
+    <!-- back to top -->
+    <div class="progress-wrap">
+      <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
+    </div>
+</body>

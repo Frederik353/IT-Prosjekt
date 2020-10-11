@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./CSS/login.css" />
+  <link
+    rel="stylesheet"
+    href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/unicons.css"
+  />
+  <link rel="stylesheet" href="./CSS/Main.css" />
+  <!-- soleil font -->
+  <link rel="stylesheet" href="https://use.typekit.net/qmt2sfg.css" />
+  <!-- jquery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script type="text/javascript" src="./Javascript/login.js"></script>
+  <title>Frederik sin nettside</title>
+  <link rel="icon" href="./Pictures/technical-support.png" />
+</head>
+<!-- classene dark og default hjelper med å endre mellom darkmode og default mode -->
+
+<body class="default">
+  <div class="login">
+    <div class="login-picture">
+      <img src="./Pictures/machinelearning.jpg" alt="" />
+      <div class="login-column">
+        <a href="./index.html" class="login-logo"> Lorem Ipsum </a>
+        <h1>Login</h1>
+        <p>User: <strong>root</strong> password: <strong>toor</strong></p>
+        <div class="form-group">
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="form-control text-input"
+            placeholder="Username"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="password"
+            id="pass"
+            name="pass"
+            class="form-control text-input"
+            placeholder="Password"
+          />
+        </div>
+
+        <div class="form-group">
+          <input
+            type="submit"
+            id="submit"
+            name="pass"
+            class="login-btn btn-md btn-info"
+            value="Login"
+          />
+        </div>
+        <span id="Required">All feilds are required.</span>
+        <span id="error"
+          >The username and/or password you specified are not correct.</span
+        >
+        <div class="login-help">
+          <a href="./index.html" class="back">&lt Back</a>
+          <p>
+            By signing in you agree to our <a href="#">Privacy Policy</a> and
+            <a href="#">Terms and Conditions</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
