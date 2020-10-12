@@ -125,11 +125,12 @@ li {
   width: 75vw;
   max-height: 50vh;
   position: relative;
-  margin: 20px;
+  margin: 20px 20px;
 }
 
 .list-style img {
   height: 30vh;
+  width: 40vw;
   border-radius: 16px;
   filter: contrast(110%);
   object-fit: cover;
