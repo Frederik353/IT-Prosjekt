@@ -469,8 +469,11 @@ h1 strong[color="blue"]::after {
 }
 
 time {
-  font-size: 14px;
   color: var(--light-text);
+}
+
+.card time {
+  font-size: 14px;
 }
 
 /* tittel */
@@ -496,6 +499,13 @@ article h2:hover {
 
 article p {
   color: var(--light-text);
+  max-width: 40vw;
+}
+
+.card p {
+  display: block;
+  overflow-y: hidden;
+  max-height: 5.7em;
 }
 
 .tags {

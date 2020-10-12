@@ -134,3 +134,25 @@ $(document).ready(function (event) {
     });
   });
 })(jQuery);
+
+
+function list() {
+  var list = document.querySelectorAll(".card");
+  console.log(list);
+  for (var i=0; i < list.length; ++i) {
+    list[i].classList.add("list-style");
+    list[i].classList.remove("card");
+  }
+}
+
+function grid() {
+  var list = document.querySelectorAll(".list-style"); 
+  console.log(list);
+  for (var i=0; i < list.length; ++i) {
+    list[i].classList.add("card");
+    list[i].classList.remove("list-style");
+  }
+}
+
+
+
