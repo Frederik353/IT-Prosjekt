@@ -474,7 +474,7 @@ time {
 }
 
 /* tittel */
-.card h2 {
+article h2 {
   font-size: 20px;
   margin: 0.25rem 0 auto;
   text-decoration: none;
@@ -484,7 +484,7 @@ time {
   cursor: pointer;
 }
 
-.card h2:hover {
+article h2:hover {
   background: linear-gradient(
     to right,
     var(--dark-pastel-green),
@@ -494,7 +494,7 @@ time {
   -webkit-background-clip: text;
 }
 
-.card-info {
+article p {
   color: var(--light-text);
 }
 

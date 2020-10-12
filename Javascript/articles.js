@@ -42,7 +42,7 @@ $(document).ready(function (event) {
     sessionStorage.setItem("searchTerm", searchTerm);
 
     if (event.keyCode === 13) {
-      window.location.pathname = "../articles.html";
+      // window.location.pathname = "../articles.html";
       var searchTerm = sessionStorage.getItem("searchTerm");
       var listItem = $("#list").children("li");
       var searchSplit = searchTerm.replace(/ /g, "'):containsi('");

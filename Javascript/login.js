@@ -6,7 +6,7 @@ $(document).ready(function () {
       $("#Required").show();
       $("#error").hide();
     } else if (name == "root" && pass == "toor") {
-      window.location.pathname = "../index.html";
+      window.location.pathname = "../articles.html";
     } else {
       $("#error").show();
       $("#Required").hide();
