@@ -1,34 +1,51 @@
 // Check active classes
 var checkClass = function () {
-  if ($(".item").hasClass("hide")) {
-    $(".item").removeClass("hide");
+  if ($(".item").hasClass("hide-lang")) {
+    $(".item").removeClass("hide-lang");
   }
 };
 
-// Category filters
+
+
+// Category filters language
 $(".all").click(function () {
   checkClass();
 });
-$(".cplusplus").click(function () {
+$(".python").click(function () {
   checkClass();
-  $(".item:not(.cplusplus)").toggleClass("hide");
+  $(".item:not(.python)").toggleClass("hide-lang");
 });
-$(".go").click(function () {
+$(".javascript").click(function () {
   checkClass();
-  $(".item:not(.go)").toggleClass("hide");
+  $(".item:not(.javascript)").toggleClass("hide-lang");
 });
-$(".react").click(function () {
+$(".javascript").click(function () {
   checkClass();
-  $(".item:not(.react)").toggleClass("hide");
+  $(".item:not(.react)").toggleClass("hide-lang");
 });
 $(".node").click(function () {
   checkClass();
-  $(".item:not(.node)").toggleClass("hide");
+  $(".item:not(.node)").toggleClass("hide-lang");
 });
 $(".java").click(function () {
   checkClass();
-  $(".item:not(.java)").toggleClass("hide");
+  $(".item:not(.java)").toggleClass("hide-lang");
 });
+// filter experience
+$(".beginner").click(function () {
+  checkClass();
+  $(".item:not(.beginner)").toggleClass("hide-exp");
+});
+$(".intermediate").click(function () {
+  checkClass();
+  $(".item:not(.intermediate)").toggleClass("hide-exp");
+});
+$(".expert").click(function () {
+  checkClass();
+  $(".item:not(.expert)").toggleClass("hide-exp");
+});
+
+
 
 // Active tag
 $(".button").click(function () {
@@ -63,12 +80,12 @@ $(document).ready(function (event) {
         .each(function (e) {
           $(this).addClass("hiding out").removeClass("in");
           setTimeout(function () {
-            $(".out").addClass("hide");
+            $(".out").addClass("hide-search");
           }, 300);
         });
 
       $("#list li:containsi('" + searchSplit + "')").each(function (e) {
-        $(this).removeClass("hide out").addClass("in");
+        $(this).removeClass("hide-search out").addClass("in");
         setTimeout(function () {
           $(".in").removeClass("hiding");
         }, 1);

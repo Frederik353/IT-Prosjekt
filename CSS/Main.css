@@ -500,11 +500,11 @@ article h2:hover {
 article p {
   color: var(--light-text);
   max-width: 40vw;
+  display: block;
+  overflow-y: hidden;
 }
 
 .card p {
-  display: block;
-  overflow-y: hidden;
   max-height: 5.7em;
 }
 

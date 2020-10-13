@@ -40,9 +40,14 @@
 .card {
   margin: 10px;
 }
-.hide {
+
+/* klasse for søke algoritme, en for språk filter og erfaring filter */
+.hide-lang, 
+.hide-search,
+.hide-exp{
   display: none;
 }
+
 
 li {
   list-style: none;
@@ -96,7 +101,7 @@ li {
   padding: 0.2rem 0.85rem 0.25rem;
 }
 
-/* 
+/*
 
 
 
@@ -123,20 +128,26 @@ li {
   flex-direction: column;
   flex-wrap: wrap;
   width: 75vw;
-  max-height: 50vh;
+  max-height: 60vh;
   position: relative;
   margin: 20px 20px;
+  transition: 0.5s;
 }
 
+/* dårlig måte å hindre teksten i å bli for lang */
+.list-style p{
+  max-height: 11em;
+}
+
+
 .list-style img {
-  height: 30vh;
+  height: 35vh;
   width: 40vw;
   border-radius: 16px;
   filter: contrast(110%);
   object-fit: cover;
   order: 2;
-  float: right;
-  margin: 20px;
+  margin: auto 20px;
 }
 
 .card time {
@@ -154,7 +165,7 @@ li {
   font-size: 1.2em;
 }
 
-/* 
+/*
 
 
 
