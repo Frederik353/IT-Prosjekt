@@ -9,7 +9,8 @@
   flex-direction: column;
 }
 
-.button {
+.button-lang,
+.button-exp {
   transition: all 0.2s ease-in-out;
   background: none;
   font-weight: 700;
@@ -22,18 +23,18 @@
   padding: 10px 0;
 }
 
-.button:hover,
-.button.active {
+.button-lang:hover,
+.button-exp:hover,
+.active {
   opacity: 1;
 }
 
 #list {
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
   width: 100%;
   margin: 50px auto;
-  align-items: flex-start;
-  justify-content: center;
   flex: 1 1 0%;
 }
 
@@ -42,12 +43,11 @@
 }
 
 /* klasse for søke algoritme, en for språk filter og erfaring filter */
-.hide-lang, 
+.hide-lang,
 .hide-search,
-.hide-exp{
+.hide-exp {
   display: none;
 }
-
 
 li {
   list-style: none;
@@ -128,17 +128,16 @@ li {
   flex-direction: column;
   flex-wrap: wrap;
   width: 75vw;
-  max-height: 60vh;
+  max-height: 55vh;
   position: relative;
-  margin: 20px 20px;
+  margin: 40px 20px;
   transition: 0.5s;
 }
 
 /* dårlig måte å hindre teksten i å bli for lang */
-.list-style p{
+.list-style p {
   max-height: 11em;
 }
-
 
 .list-style img {
   height: 35vh;

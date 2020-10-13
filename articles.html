@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+< lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -91,16 +91,17 @@
   <div class="filter">
     <div class="buttons">
       <h2>Categories</h2>
-      <button class="button all active">All</button>
-      <button class="button python">Python</button>
-      <button class="button javascript">Javascript</button>
-      <button class="button cplusplus">c++</button>
-      <button class="button node">node</button>
-      <button class="button java">java</button>
+      <button class=" all">All</button>
+      <!-- note: få onclick parameter til å virke -->
+      <button onclick="category("javascript")" class="button-lang">Python</button>
+      <button onclick="category("javascript")" class="button-lang">Javascript</button>
+      <button onclick="category("javascript")" class="button-lang">Webdev</button>
+      <button onclick="category("javascript")" class="button-lang">node</button>
+      <button onclick="category("javascript")" class="button-lang">java</button>
       <h2>Experience</h2>
-      <button class="button beginner">Beginner</button>
-      <button class="button intermidiate">Intermidiate</button>
-      <button class="button expert">Expert</button>
+      <button class="button-exp beginner">Beginner</button>
+      <button class="button-exp intermediate">Intermidiate</button>
+      <button class="button-exp expert">Expert</button>
     </div>
 
     <ul id="list">
@@ -174,7 +175,7 @@
             </div>
           </article>
       </li>
-      <li class="in item node javascript expert">
+      <li class="in item node javascript webdev expert">
           <article class="card">
             <time>2017-10-07</time>
             <img src="./Pictures/articles/Node.jpg" alt="" />
@@ -192,7 +193,7 @@
             </div>
           </article>
       </li>
-      <li class="in item php beginner">
+      <li class="in item php webdev beginner">
           <article class="card">
             <time>2017-01-08</time>
             <img src="./Pictures/articles/php.png" alt="" />
@@ -210,7 +211,7 @@
             </div>
           </article>
       </li>
-      <li class="in item sql intermediate">
+      <li class="in item sql webdev intermediate">
           <article class="card">
             <time>2018-02-03</time>
             <img src="./Pictures/articles/sql.jpg" alt="" />
@@ -227,7 +228,7 @@
             </div>
           </article>
       </li>
-      <li class="in item javascript beginner">
+      <li class="in item javascript webdev beginner">
           <article class="card">
             <time>2017-02-09</time>
             <img src="./Pictures/articles/javascript.jpg" alt="" />
@@ -304,7 +305,7 @@
             </div>
           </article>
       </li>
-      <li class="in item angular javascript intermediate">
+      <li class="in item angular javascript webdev intermediate">
           <article class="card">
             <time>2017-03-15</time>
             <img src="./Pictures/articles/angular.jpg" alt="" />
@@ -323,7 +324,7 @@
             </div>
           </article>
       </li>
-      <li class="in item react javascript beginner">
+      <li class="in item react javascript webdev beginner">
           <article class="card">
             <time>2018-02-26</time>
             <img src="./Pictures/articles/react.jpg" alt="" />
@@ -341,7 +342,7 @@
             </div>
           </article>
       </li>
-      <li class="in item javascript vue  intermediate">
+      <li class="in item javascript vue webdev intermediate">
           <article class="card">
             <time>2020-07-21</time>
             <img src="./Pictures/articles/vue.jpeg" alt="" />
@@ -359,7 +360,7 @@
             </div>
           </article>
       </li>
-      <li class="in item flask python expert">
+      <li class="in item flask python webdev expert">
           <article class="card">
             <time>2018-05-27</time>
             <img src="./Pictures/articles/Flask.jpg" alt="" />

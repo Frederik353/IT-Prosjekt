@@ -1,57 +1,77 @@
-// Check active classes
-var checkClass = function () {
-  if ($(".item").hasClass("hide-lang")) {
-    $(".item").removeClass("hide-lang");
-  }
-};
-
 
 
 // Category filters language
-$(".all").click(function () {
-  checkClass();
+function category(category){
+  var list = document.querySelectorAll(".item"); 
+  for (var i=1; i < list.length; ++i) {
+    if(list[i].classList.contains(category)){
+      list[i].classList.remove("hide-lang");
+    }
+    else{
+      list[i].classList.add("hide-lang");
+    }
+    
+  }
+}
+
+// $(".all").click(function () {
+// });
+// $(".python").click(function () {
+//   $(".item:not(.python)").toggleClass("hide-lang");
+// });
+// $(".javascript").click(function () {
+//   $(".item:not(.javascript)").toggleClass("hide-lang");
+// });
+// $(".webdev").click(function () {
+//   $(".item:not(.webdev)").toggleClass("hide-lang");
+// });
+// $(".node").click(function () {
+//   $(".item:not(.node)").toggleClass("hide-lang");
+// });
+// $(".java").click(function () {
+//   $(".item:not(.java)").toggleClass("hide-lang");
+// });
+
+// // filter experience
+// $(".beginner").click(function () {
+//   $(".item:not(.beginner)").toggleClass("hide-exp");
+// });
+
+// $(".intermediate").click(function () {
+//   $(".item:not(.intermediate)").toggleClass("hide-exp");
+// });
+
+// $(".expert").click(function () {
+//   $(".item:not(.expert)").toggleClass("hide-exp");
+// });
+
+
+
+
+$(".button-lang").click(function() {
+  if($(this).hasClass("active")){
+    $(this).removeClass("active");
+  }
+  else{ 
+    // $(".button-lang").removeClass("active");
+    $(this).addClass("active");
+  }
 });
-$(".python").click(function () {
-  checkClass();
-  $(".item:not(.python)").toggleClass("hide-lang");
-});
-$(".javascript").click(function () {
-  checkClass();
-  $(".item:not(.javascript)").toggleClass("hide-lang");
-});
-$(".javascript").click(function () {
-  checkClass();
-  $(".item:not(.react)").toggleClass("hide-lang");
-});
-$(".node").click(function () {
-  checkClass();
-  $(".item:not(.node)").toggleClass("hide-lang");
-});
-$(".java").click(function () {
-  checkClass();
-  $(".item:not(.java)").toggleClass("hide-lang");
-});
-// filter experience
-$(".beginner").click(function () {
-  checkClass();
-  $(".item:not(.beginner)").toggleClass("hide-exp");
-});
-$(".intermediate").click(function () {
-  checkClass();
-  $(".item:not(.intermediate)").toggleClass("hide-exp");
-});
-$(".expert").click(function () {
-  checkClass();
-  $(".item:not(.expert)").toggleClass("hide-exp");
+
+
+$(".button-exp").click(function() {
+  if($(this).hasClass("active")){
+    $(this).removeClass("active");
+  }
+  else{ 
+    // $(".button-exp").removeClass("active");
+    $(this).addClass("active");
+  }
 });
 
 
 
-// Active tag
-$(".button").click(function () {
-  $(".button").removeClass("active");
-  $(this).addClass("active");
-});
+// search bar
 
 $(document).ready(function (event) {
   $("#search-bar").keyup(function (event) {
