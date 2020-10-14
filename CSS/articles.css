@@ -43,9 +43,7 @@
 }
 
 /* klasse for søke algoritme, en for språk filter og erfaring filter */
-.hide-lang,
-.hide-search,
-.hide-exp {
+.hide-search {
   display: none;
 }
 

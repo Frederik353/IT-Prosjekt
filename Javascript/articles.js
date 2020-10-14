@@ -1,38 +1,67 @@
 
 
 // Category filters language
+let activelang = []
+let lang = [ ".remove-filters",".python",".javascript", ".webdev",".node", ".java" ]
+let clicked = [true, true, true, true, true, true,]
+
+
 function sortlang(x){
-
-  let lang = [ "remove-filters","python","javascript", "webdev","node", "java" ]
-  console.log(lang[x]);
-  var list = document.querySelectorAll(".item"); 
-  var buttons = document.querySelectorAll(".button-lang" );
-  console.log(buttons);
+  var allarticles = document.querySelectorAll(".item");
   
-  for (var i=1; i < list.length; ++i) {
-    
 
-    if (lang[x] === "remove-filters"){
-      for (var u=1; u < buttons.length; ++u) {
-        buttons[u].classList.remove("active");
-      }
-      list[i].classList.remove("active");
-      list[i].classList.remove("hide-lang");
+  // kategorier som skal vises
+  for (var i=0; i < activelang.length; ++i){
+    if (lang[x] == activelang[i]){
+      delete activelang[i]
     }
-
-    else if(list[i].classList.contains(lang[x]) && !(list[i].classList.contains("active"))) {
-      list[i].classList.remove("hide-lang");
-      list[i].classList.add("active");
-      console.log("kjdfbnskf");
-    }
-    
-    else if(list[i].classList.contains(lang[x]) && (list[i].classList.contains("active"))){
-      list[i].classList.add("hide-lang");
-      list[i].classList.remove("active");
-    }
-
   }
+  if (clicked[x]){
+    activelang.push(lang[x])
+    clicked[x] = false;
+  }else{
+    clicked[x] = true;
+  }
+  // fjerner tomme plasser i activelang
+  activelang = activelang.filter(el => {return el != null && el != '';});
+  for (var i=0; i < allarticles.length; ++i){
+    for (var i=0; i < activelang.length; ++i){
+      
+    }
+  }
+  
+
+
+
+  console.log(allarticles);
+  console.log(lang[x]);
+  console.log(clicked);
+  console.log(activelang);
+
+
+  // var list = document.querySelectorAll(".item");
+  // var buttons = document.querySelectorAll(".button-lang" );
+  // console.log(list);
+  
+  // for (var i=1; i < list.length; ++i) {
+  //   if (lang[i].style.display === "none") {
+  //     lang[i].style.display = "block";
+  //   } 
+    
+  //   else {
+  //     lang[i].style.display = "none";
+  //   }
+  // } 
 }
+
+
+// if (lang[x] === "remove-filters"){
+//       for (var j=1; j < buttons.length; ++j) {
+//         buttons[j].classList.remove("active");
+//       }
+//       list[i].classList.remove("active");
+//       list[i].classList.remove("hide-lang");
+//     }
 
 
 
