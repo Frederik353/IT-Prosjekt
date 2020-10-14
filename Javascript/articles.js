@@ -1,50 +1,38 @@
 
 
 // Category filters language
-function category(category){
+function sortlang(x){
+
+  let lang = [ "remove-filters","python","javascript", "webdev","node", "java" ]
+  console.log(lang[x]);
   var list = document.querySelectorAll(".item"); 
+  var buttons = document.querySelectorAll(".button-lang" );
+  console.log(buttons);
+  
   for (var i=1; i < list.length; ++i) {
-    if(list[i].classList.contains(category)){
+    
+
+    if (lang[x] === "remove-filters"){
+      for (var u=1; u < buttons.length; ++u) {
+        buttons[u].classList.remove("active");
+      }
+      list[i].classList.remove("active");
       list[i].classList.remove("hide-lang");
     }
-    else{
-      list[i].classList.add("hide-lang");
+
+    else if(list[i].classList.contains(lang[x]) && !(list[i].classList.contains("active"))) {
+      list[i].classList.remove("hide-lang");
+      list[i].classList.add("active");
+      console.log("kjdfbnskf");
     }
     
+    else if(list[i].classList.contains(lang[x]) && (list[i].classList.contains("active"))){
+      list[i].classList.add("hide-lang");
+      list[i].classList.remove("active");
+    }
+
   }
 }
-
-// $(".all").click(function () {
-// });
-// $(".python").click(function () {
-//   $(".item:not(.python)").toggleClass("hide-lang");
-// });
-// $(".javascript").click(function () {
-//   $(".item:not(.javascript)").toggleClass("hide-lang");
-// });
-// $(".webdev").click(function () {
-//   $(".item:not(.webdev)").toggleClass("hide-lang");
-// });
-// $(".node").click(function () {
-//   $(".item:not(.node)").toggleClass("hide-lang");
-// });
-// $(".java").click(function () {
-//   $(".item:not(.java)").toggleClass("hide-lang");
-// });
-
-// // filter experience
-// $(".beginner").click(function () {
-//   $(".item:not(.beginner)").toggleClass("hide-exp");
-// });
-
-// $(".intermediate").click(function () {
-//   $(".item:not(.intermediate)").toggleClass("hide-exp");
-// });
-
-// $(".expert").click(function () {
-//   $(".item:not(.expert)").toggleClass("hide-exp");
-// });
-
 
 
 
@@ -60,6 +48,8 @@ $(".button-lang").click(function() {
 
 
 $(".button-exp").click(function() {
+  
+  
   if($(this).hasClass("active")){
     $(this).removeClass("active");
   }

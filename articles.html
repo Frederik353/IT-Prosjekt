@@ -91,13 +91,13 @@
   <div class="filter">
     <div class="buttons">
       <h2>Categories</h2>
-      <button class=" all">All</button>
+      <button onclick="sortlang(0)" class="remove-filters">Remove filters</button>
       <!-- note: få onclick parameter til å virke -->
-      <button onclick="category("javascript")" class="button-lang">Python</button>
-      <button onclick="category("javascript")" class="button-lang">Javascript</button>
-      <button onclick="category("javascript")" class="button-lang">Webdev</button>
-      <button onclick="category("javascript")" class="button-lang">node</button>
-      <button onclick="category("javascript")" class="button-lang">java</button>
+      <button onclick="sortlang(1)" class="button-lang">Python</button>
+      <button onclick="sortlang(2)" class="button-lang">Javascript</button>
+      <button onclick="sortlang(3)" class="button-lang">Webdev</button>
+      <button onclick="sortlang(4)" class="button-lang">node</button>
+      <button onclick="sortlang(5)" class="button-lang">java</button>
       <h2>Experience</h2>
       <button class="button-exp beginner">Beginner</button>
       <button class="button-exp intermediate">Intermidiate</button>
