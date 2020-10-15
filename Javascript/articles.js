@@ -1,3 +1,7 @@
+// note: set hve res er tom displa allarticles
+
+
+
 // Category filters language
 // liste med alle aktive filtrer
 let activelang = [];
@@ -17,7 +21,7 @@ let lang = [
  
 function sortlang(x){
     var allarticles = document.querySelectorAll(".item");
-  console.log(lang)
+  // console.log(lang)
   // kategorier som skal vises
   
  
@@ -35,7 +39,8 @@ function sortlang(x){
     for( var i = 0; i < allarticles.length; ++i){
       allarticles[i].style.display = "none";
     }
-  }else{
+  }
+  else{
     lang[x][1] = true;
     for( var i = 0; i < allarticles.length; ++i){
       allarticles[i].style.display = "block";
@@ -44,15 +49,26 @@ function sortlang(x){
   // fjerner tomme plasser i activelang
   activelang = activelang.filter(el => {return el != null && el != '';});
   var display = [];
-  for (var i=0; i < activelang.length; ++i){
-    display.push(document.querySelectorAll(activelang[i]));
-  }
+  
+
+
+  // for (var i=0; i < activelang.length; ++i){
+    var test = activelang.toString();
+  // }
+  console.log(test)
+  var res = test.replace(/^[, ]+|[, ]+$|[, ]+/g, " ").replace(/^[. ]+|[. ]+$|[. ]+/g, " ");
+  console.log(res)
+  
+  
+  display.push(document.getElementsByClassName(res));
+  console.log(display)
   for (var i = 0; i < display.length; ++i) {
     for (var j = 0; j < display[i].length; ++j) {
       display[i][j].style.display = "block";
     }
   }
- 
+
+  // fikser alt tilbake til standard hvis man trykker fjern filtre
   if (lang[x][0] === ".remove-filters"){
     for( var i = 0; i < allarticles.length; ++i){
       allarticles[i].style.display = "block";
@@ -68,11 +84,11 @@ function sortlang(x){
     
   }
  
-  console.log(lang[x][0]);
-  console.log(display);
-  console.log(allarticles);
-  console.log(lang[x][1]);
-  console.log(activelang);
+  // console.log(lang[x][0]);
+  // console.log(display);
+  // console.log(allarticles);
+  // console.log(lang[x][1]);
+  // console.log(activelang);
 }
 
 
@@ -114,7 +130,7 @@ $(document).ready(function (event) {
     if (event.keyCode === 13) {
       // window.location.pathname = "../articles.html";
       var searchTerm = sessionStorage.getItem("searchTerm");
-      var listItem = $("#list").children("li");
+      // var listItem = $("#list").children("li");
       var searchSplit = searchTerm.replace(/ /g, "'):containsi('");
 
       //extends :contains to be case insensitive
