@@ -1,67 +1,68 @@
 
 
 // Category filters language
-let activelang = []
-let lang = [ ".remove-filters",".python",".javascript", ".webdev",".node", ".java" ]
-let clicked = [true, true, true, true, true, true,]
+let activelang = [];
+let lang = [ ".remove-filters",".python",".javascript", ".webdev",".node", ".java", ".beginner", ".intermediate", ".expert"];
+let clicked = [false, true, true, true, true, true, true, true, true,];
 
 
 function sortlang(x){
   var allarticles = document.querySelectorAll(".item");
   
-
   // kategorier som skal vises
+  
+
+
   for (var i=0; i < activelang.length; ++i){
     if (lang[x] == activelang[i]){
-      delete activelang[i]
+      delete activelang[i];
     }
   }
   if (clicked[x]){
-    activelang.push(lang[x])
+    activelang.push(lang[x]);
     clicked[x] = false;
+    for( var i = 0; i < allarticles.length; ++i){
+      allarticles[i].style.display = "none";
+    }
   }else{
     clicked[x] = true;
+    for( var i = 0; i < allarticles.length; ++i){
+      allarticles[i].style.display = "block";
+    }
   }
   // fjerner tomme plasser i activelang
   activelang = activelang.filter(el => {return el != null && el != '';});
-  for (var i=0; i < allarticles.length; ++i){
-    for (var i=0; i < activelang.length; ++i){
-      
+  var display = [];
+  for (var i=0; i < activelang.length; ++i){
+    display.push(document.querySelectorAll(activelang[i]));
+  }
+  for (var i = 0; i < display.length; ++i) {
+    for (var j = 0; j < display[i].length; ++j) {
+      display[i][j].style.display = "block";
     }
   }
-  
 
+  if (lang[x] === ".remove-filters"){
+    for( var i = 0; i < allarticles.length; ++i){
+      allarticles[i].style.display = "block";
+    }
+    allarticles[0] = false;
+    for( var i = 1; i < clicked.length; ++i){
+      clicked[i] = true;
+    }
+    for (var i = 0; i < activelang.length; ++i) {
+      delete activelang[i];
+    }
+    activelang = activelang.filter(el => {return el != null && el != '';});
+  }
 
-
-  console.log(allarticles);
   console.log(lang[x]);
+  console.log(display);
+  // console.log(allarticles);
   console.log(clicked);
   console.log(activelang);
-
-
-  // var list = document.querySelectorAll(".item");
-  // var buttons = document.querySelectorAll(".button-lang" );
-  // console.log(list);
-  
-  // for (var i=1; i < list.length; ++i) {
-  //   if (lang[i].style.display === "none") {
-  //     lang[i].style.display = "block";
-  //   } 
-    
-  //   else {
-  //     lang[i].style.display = "none";
-  //   }
-  // } 
 }
 
-
-// if (lang[x] === "remove-filters"){
-//       for (var j=1; j < buttons.length; ++j) {
-//         buttons[j].classList.remove("active");
-//       }
-//       list[i].classList.remove("active");
-//       list[i].classList.remove("hide-lang");
-//     }
 
 
 
