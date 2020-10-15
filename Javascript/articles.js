@@ -1,31 +1,42 @@
-
-
 // Category filters language
+// liste med alle aktive filtrer
 let activelang = [];
-let lang = [ ".remove-filters",".python",".javascript", ".webdev",".node", ".java", ".beginner", ".intermediate", ".expert"];
-let clicked = [false, true, true, true, true, true, true, true, true,];
-
-
+// 2d array med klasse for kategori og boolean for om dette er først eller andre gang knappen klikkes
+let lang = [
+[".remove-filters", false], 
+[".python", true],
+[".javascript", true], 
+[".webdev", true],
+[".node", true],
+[".java", true],
+[".beginner", true], 
+[".intermediate", true], 
+[".expert", true], 
+];
+ 
+ 
 function sortlang(x){
-  var allarticles = document.querySelectorAll(".item");
-  
+    var allarticles = document.querySelectorAll(".item");
+  console.log(lang)
   // kategorier som skal vises
   
-
-
+ 
+ 
   for (var i=0; i < activelang.length; ++i){
-    if (lang[x] == activelang[i]){
+    // ser om filteret allered er et aktivt og sletter de for å forsikre at listen kun inneholder et av hver elemnt
+    if (lang[x][0] == activelang[i]){
       delete activelang[i];
     }
   }
-  if (clicked[x]){
-    activelang.push(lang[x]);
-    clicked[x] = false;
+  // hvis allered trykket på knappen fjerner den filteret
+  if (lang[x][1]){
+    activelang.push(lang[x][0]);
+    lang[x][1] = false;
     for( var i = 0; i < allarticles.length; ++i){
       allarticles[i].style.display = "none";
     }
   }else{
-    clicked[x] = true;
+    lang[x][1] = true;
     for( var i = 0; i < allarticles.length; ++i){
       allarticles[i].style.display = "block";
     }
@@ -41,27 +52,29 @@ function sortlang(x){
       display[i][j].style.display = "block";
     }
   }
-
-  if (lang[x] === ".remove-filters"){
+ 
+  if (lang[x][0] === ".remove-filters"){
     for( var i = 0; i < allarticles.length; ++i){
       allarticles[i].style.display = "block";
     }
     allarticles[0] = false;
-    for( var i = 1; i < clicked.length; ++i){
-      clicked[i] = true;
+    for( var i = 1; i < lang.length; ++i){
+      lang[x][i] = true;
     }
     for (var i = 0; i < activelang.length; ++i) {
       delete activelang[i];
     }
     activelang = activelang.filter(el => {return el != null && el != '';});
+    
   }
-
-  console.log(lang[x]);
+ 
+  console.log(lang[x][0]);
   console.log(display);
-  // console.log(allarticles);
-  console.log(clicked);
+  console.log(allarticles);
+  console.log(lang[x][1]);
   console.log(activelang);
 }
+
 
 
 
