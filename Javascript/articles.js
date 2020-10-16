@@ -1,6 +1,3 @@
-// note: set hve res er tom displa allarticles
-
-
 
 // Category filters language
 // liste med alle aktive filtrer
@@ -10,8 +7,8 @@ let lang = [
 [".remove-filters", false], 
 [".python", true],
 [".javascript", true], 
-[".webdev", true],
-[".node", true],
+[".front-end", true],
+[".back-end", true],
 [".java", true],
 [".beginner", true], 
 [".intermediate", true], 
@@ -21,7 +18,7 @@ let lang = [
  
 function sortlang(x){
     var allarticles = document.querySelectorAll(".item");
-  // console.log(lang)
+
   // kategorier som skal vises
   
  
@@ -66,6 +63,12 @@ function sortlang(x){
     for (var j = 0; j < display[i].length; ++j) {
       display[i][j].style.display = "block";
     }
+  }
+  if(res.length == 0) {
+    for( var i = 0; i < allarticles.length; ++i){
+      allarticles[i].style.display = "block";
+    }
+  console.log("res empty")
   }
 
   // fikser alt tilbake til standard hvis man trykker fjern filtre
