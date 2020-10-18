@@ -1,3 +1,5 @@
+// note: få søke funksjon til å kjøre etter sortlang
+
 
 // Category filters language
 // liste med alle aktive filtrer
@@ -14,10 +16,12 @@ let lang = [
 [".intermediate", true], 
 [".expert", true], 
 ];
- 
- 
+
+let res = "";
+
+
 function sortlang(x){
-    var allarticles = document.querySelectorAll(".item");
+  var allarticles = document.querySelectorAll(".item");
 
   // kategorier som skal vises
   
@@ -39,24 +43,16 @@ function sortlang(x){
   }
   else{
     lang[x][1] = true;
-    for( var i = 0; i < allarticles.length; ++i){
-      allarticles[i].style.display = "block";
-    }
   }
   // fjerner tomme plasser i activelang
   activelang = activelang.filter(el => {return el != null && el != '';});
   var display = [];
   
+  var test = activelang.toString();
 
-
-  // for (var i=0; i < activelang.length; ++i){
-    var test = activelang.toString();
-  // }
-  console.log(test)
-  var res = test.replace(/^[, ]+|[, ]+$|[, ]+/g, " ").replace(/^[. ]+|[. ]+$|[. ]+/g, " ");
+  res = test.replace(/^[, ]+|[, ]+$|[, ]+/g, " ").replace(/^[. ]+|[. ]+$|[. ]+/g, " ");
   console.log(res)
-  
-  
+
   display.push(document.getElementsByClassName(res));
   console.log(display)
   for (var i = 0; i < display.length; ++i) {
@@ -84,7 +80,14 @@ function sortlang(x){
       delete activelang[i];
     }
     activelang = activelang.filter(el => {return el != null && el != '';});
-    
+    var buttons = document.getElementsByClassName("category-button");
+    console.log(buttons);
+    for(var i = 0; i < buttons.length; i++){
+      if(buttons[i].classList.contains("active")){
+        buttons[i].classList.remove("active");
+  }
+
+    }
   }
  
   // console.log(lang[x][0]);
@@ -98,70 +101,39 @@ function sortlang(x){
 
 
 
-$(".button-lang").click(function() {
+$(".category-button").click(function() {
   if($(this).hasClass("active")){
     $(this).removeClass("active");
   }
   else{ 
-    // $(".button-lang").removeClass("active");
     $(this).addClass("active");
   }
 });
 
-
-$(".button-exp").click(function() {
-  
-  
-  if($(this).hasClass("active")){
-    $(this).removeClass("active");
-  }
-  else{ 
-    // $(".button-exp").removeClass("active");
-    $(this).addClass("active");
-  }
-});
 
 
 
 // search bar
+let all = []
 
-$(document).ready(function (event) {
-  $("#search-bar").keyup(function (event) {
-    var searchTerm = $("#search-bar").val();
-    sessionStorage.setItem("searchTerm", searchTerm);
+window.addEventListener("load", function(){
+  document.getElementById("search-bar").addEventListener("keyup", function(){
+    var search = this.value.toLowerCase();
 
-    if (event.keyCode === 13) {
-      // window.location.pathname = "../articles.html";
-      var searchTerm = sessionStorage.getItem("searchTerm");
-      // var listItem = $("#list").children("li");
-      var searchSplit = searchTerm.replace(/ /g, "'):containsi('");
+    if(res.length == 0) {
+      all = document.querySelectorAll(".item");
+    }else{
+      all = document.getElementsByClassName(res);
+    }
 
-      //extends :contains to be case insensitive
-      $.extend($.expr[":"], {
-        containsi: function (elem, i, match, array) {
-          return (
-            (elem.textContent || elem.innerText || "")
-              .toLowerCase()
-              .indexOf((match[3] || "").toLowerCase()) >= 0
-          );
-        },
-      });
-
-      $("#list li")
-        .not(":containsi('" + searchSplit + "')")
-        .each(function (e) {
-          $(this).addClass("hiding out").removeClass("in");
-          setTimeout(function () {
-            $(".out").addClass("hide-search");
-          }, 300);
-        });
-
-      $("#list li:containsi('" + searchSplit + "')").each(function (e) {
-        $(this).removeClass("hide-search out").addClass("in");
-        setTimeout(function () {
-          $(".in").removeClass("hiding");
-        }, 1);
-      });
+    // looper gjenom listen og viser bare elementer som matcher søkeordet
+    for (let i of all) {
+      let item = i.innerHTML.toLowerCase();
+      if (item.indexOf(search) == -1) {
+        i.style.display = "none";
+      } else {
+        i.style.display = "block";
+      }
     }
   });
 });

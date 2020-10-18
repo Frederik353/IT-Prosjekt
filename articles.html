@@ -32,7 +32,7 @@
       <img src="./Pictures/technical-support.svg" alt="logo" />
     </a>
     <ul class="nav-links">
-      <li class="nav-item"><a href="#">Home</a></li>
+      <li class="nav-item"><a href="./index.html">Home</a></li>
       <li class="nav-item"><a href="#">Articles</a></li>
       <li class="nav-item">
         <input
@@ -52,7 +52,6 @@
           Dark
         </button>
       </li>
-      <li class="nav-item" id="login-button"><a href="#">Login</a></li>
     </ul>
   </nav>
   <!-- 
@@ -66,7 +65,7 @@
   <!-- toppbilde -->
   <div class="hero-img">
     <ul class="breadcrumb">
-      <li><a href="#home">Home</a></li>
+      <li><a href="./index.html">Home</a></li>
       <li><a href="#articles">Articles</a></li>
     </ul>
     <img src="./Pictures/technology.png" alt="" />
@@ -93,15 +92,15 @@
       <button onclick="sortlang(0)" class="remove-filters">Remove filters</button>
       <h2>Categories</h2>
       <!-- note: få onclick parameter til å virke -->
-      <button onclick="sortlang(1)" class="button-lang">Python</button>
-      <button onclick="sortlang(2)" class="button-lang">Javascript</button>
-      <button onclick="sortlang(3)" class="button-lang">Front-end</button>
-      <button onclick="sortlang(4)" class="button-lang">Back-end</button>
-      <button onclick="sortlang(5)" class="button-lang">java</button>
+      <button onclick="sortlang(1)" class="category-button">Python</button>
+      <button onclick="sortlang(2)" class="category-button">Javascript</button>
+      <button onclick="sortlang(3)" class="category-button">Front-end</button>
+      <button onclick="sortlang(4)" class="category-button">Back-end</button>
+      <button onclick="sortlang(5)" class="category-button">java</button>
       <h2>Experience</h2>
-      <button onclick="sortlang(6)" class="button-exp beginner">Beginner</button>
-      <button onclick="sortlang(7)" class="button-exp intermediate">Intermediate</button>
-      <button onclick="sortlang(8)" class="button-exp expert">Expert</button>
+      <button onclick="sortlang(6)" class="category-button beginner">Beginner</button>
+      <button onclick="sortlang(7)" class="category-button intermediate">Intermediate</button>
+      <button onclick="sortlang(8)" class="category-button expert">Expert</button>
     </div>
 
     <ul id="list">
@@ -175,7 +174,7 @@
             </div>
           </article>
       </li>
-      <li class="in item node javascript front-end expert">
+      <li class="in item node javascript back-end expert">
           <article class="card">
             <time>2017-10-07</time>
             <img src="./Pictures/articles/Node.jpg" alt="" />
@@ -462,10 +461,6 @@
       
     </ul>
   </div>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <!-- jquery ui -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
   <script type="text/javascript" src="./javascript/articles.js"></script>
   <!-- 
 
@@ -477,14 +472,13 @@
   <!-- Footer -->
   <div class="footer">
     <ul class="breadcrumb">
-      <li><a href="#home">Home</a></li>
+      <li><a href="./index.html">Home</a></li>
       <li><a href="#articles">Articles</a></li>
-      <li><a href="#css">css</a></li>
     </ul>
     <div class="container">
       <div class="upperfoot">
         <h2>Subscribe to our newsletter</h2>
-        <input type="text" placeholder="Email address" name="mail" requijava />
+        <input type="text" placeholder="Email address" name="mail" required />
         <button>Subscribe</button>
       </div>
       <div class="upperfoot">
@@ -512,28 +506,16 @@
       <!-- ikoner fra https://iconscout.com/icon-pack/social-media-40 -->
       <div>
         <a href="#reddit">
-          <img
-            src="./Pictures/social-media-40/svg/reddit-157-616168.svg"
-            alt="reddit"
-          />
+          <img src="./Pictures/social-media-40/svg/reddit-157-616168.svg" alt="reddit" />
         </a>
         <a href="#github">
-          <img
-            src="./Pictures/social-media-40/svg/github-148-616149.svg"
-            alt="github"
-          />
+          <img src="./Pictures/social-media-40/svg/github-148-616149.svg" alt="github" />
         </a>
         <a href="#youtube">
-          <img
-            src="./Pictures/social-media-40/svg/youtube-244-616121.svg"
-            alt="youtube"
-          />
+          <img src="./Pictures/social-media-40/svg/youtube-244-616121.svg" alt="youtube" />
         </a>
         <a href="#instagram">
-          <img
-            src="./Pictures/social-media-40/svg/instagram-204-616157.svg"
-            alt="instagram"
-          />
+          <img src="./Pictures/social-media-40/svg/instagram-204-616157.svg" alt="instagram" />
         </a>
       </div>
       <div>
@@ -545,12 +527,7 @@
   </div>
   <!-- back to top -->
   <div class="progress-wrap">
-    <svg
-      class="progress-circle svg-content"
-      width="100%"
-      height="100%"
-      viewBox="-1 -1 102 102"
-    >
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
       <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
     </svg>
   </div>
