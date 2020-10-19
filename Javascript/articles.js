@@ -19,14 +19,19 @@ let lang = [
 
 let res = "";
 
-
 function sortlang(x){
   var allarticles = document.querySelectorAll(".item");
-
-  // kategorier som skal vises
+  var buttons = document.getElementsByClassName("category-button");
+  // legger til stil på knappene
+  if(x > 0){
+    if(buttons[x - 1].classList.contains("active")){
+    buttons[x - 1].classList.remove("active");
+    }else{
+    buttons[x - 1].classList.add("active");
+    }
+  }
   
- 
- 
+    // kategorier som skal vises
   for (var i=0; i < activelang.length; ++i){
     // ser om filteret allered er et aktivt og sletter de for å forsikre at listen kun inneholder et av hver elemnt
     if (lang[x][0] == activelang[i]){
@@ -46,20 +51,33 @@ function sortlang(x){
   }
   // fjerner tomme plasser i activelang
   activelang = activelang.filter(el => {return el != null && el != '';});
-  var display = [];
   
   var test = activelang.toString();
-
+  
   res = test.replace(/^[, ]+|[, ]+$|[, ]+/g, " ").replace(/^[. ]+|[. ]+$|[. ]+/g, " ");
-  console.log(res)
+  console.log(searchlist)
+
+  var display = [];
+  // if(res.length > 0){
+  //   for(var i = 0; i < searchlist.length; ++i){
+  //   if(searchlist[i].matches(res)){
+  //       display.push(searchlist[i]);
+  //       console.log("daskjhjdakj")
+  //     }
+  //   }
+  // }
+  
 
   display.push(document.getElementsByClassName(res));
-  console.log(display)
+  
+  // viser alt i display
   for (var i = 0; i < display.length; ++i) {
     for (var j = 0; j < display[i].length; ++j) {
       display[i][j].style.display = "block";
     }
   }
+
+  // hvis ingen filter vis alle
   if(res.length == 0) {
     for( var i = 0; i < allarticles.length; ++i){
       allarticles[i].style.display = "block";
@@ -80,42 +98,39 @@ function sortlang(x){
       delete activelang[i];
     }
     activelang = activelang.filter(el => {return el != null && el != '';});
-    var buttons = document.getElementsByClassName("category-button");
-    console.log(buttons);
+    
+
     for(var i = 0; i < buttons.length; i++){
       if(buttons[i].classList.contains("active")){
         buttons[i].classList.remove("active");
-  }
-
+      }
     }
   }
- 
-  // console.log(lang[x][0]);
-  // console.log(display);
-  // console.log(allarticles);
-  // console.log(lang[x][1]);
-  // console.log(activelang);
+
+
+
+  // document.getElementById('search-bar').value = "search";
 }
 
 
 
 
 
-$(".category-button").click(function() {
-  if($(this).hasClass("active")){
-    $(this).removeClass("active");
-  }
-  else{ 
-    $(this).addClass("active");
-  }
-});
+// $(".category-button").click(function() {
+//   if($(this).hasClass("active")){
+//     $(this).removeClass("active");
+//   }
+//   else{ 
+//     $(this).addClass("active");
+//   }
+// });
 
 
 
 
 // search bar
-let all = []
-
+let all = [];
+let searchlist = [];
 window.addEventListener("load", function(){
   document.getElementById("search-bar").addEventListener("keyup", function(){
     var search = this.value.toLowerCase();
@@ -127,14 +142,17 @@ window.addEventListener("load", function(){
     }
 
     // looper gjenom listen og viser bare elementer som matcher søkeordet
+    searchlist = [];
     for (let i of all) {
       let item = i.innerHTML.toLowerCase();
       if (item.indexOf(search) == -1) {
         i.style.display = "none";
       } else {
         i.style.display = "block";
+        searchlist.push(i);
       }
     }
+    // console.log(searchlist);
   });
 });
 
@@ -194,12 +212,12 @@ window.addEventListener("load", function(){
       return false;
     });
   });
-})(jQuery);
+});
 
 
 function list() {
   var list = document.querySelectorAll(".card");
-  console.log(list);
+  // console.log(list);
   for (var i=0; i < list.length; ++i) {
     list[i].classList.add("list-style");
     list[i].classList.remove("card");
@@ -208,7 +226,7 @@ function list() {
 
 function grid() {
   var list = document.querySelectorAll(".list-style"); 
-  console.log(list);
+  // console.log(list);
   for (var i=0; i < list.length; ++i) {
     list[i].classList.add("card");
     list[i].classList.remove("list-style");
