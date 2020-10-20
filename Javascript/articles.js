@@ -212,7 +212,7 @@ window.addEventListener("load", function(){
       return false;
     });
   });
-});
+})(jQuery);
 
 
 function list() {

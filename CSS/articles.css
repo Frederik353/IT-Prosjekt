@@ -63,9 +63,6 @@
   display: none;
 }
 
-li {
-  list-style: none;
-}
 
 .hero-img {
   display: flex;
@@ -150,7 +147,7 @@ li {
 
 /* dårlig måte å hindre teksten i å bli for lang */
 .list-style p {
-  max-height: 11em;
+  max-height: 10.8em;
 }
 
 .list-style img {
@@ -162,6 +159,7 @@ li {
   order: 2;
   margin: auto 20px;
 }
+
 
 .card time {
   font-size: 14px;

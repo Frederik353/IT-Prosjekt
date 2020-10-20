@@ -414,6 +414,10 @@ h1 strong[color="blue"]::after {
 }
 
 /* kort / artikler */
+li {
+  list-style: none;
+}
+
 .card-title {
   display: flex;
   flex-direction: column;
@@ -456,16 +460,21 @@ h1 strong[color="blue"]::after {
   object-fit: cover;
 }
 
-.card:hover ~ .card {
+.item{
+    transition: 0.3s;
+
+}
+.item:hover ~ li{
   transform: translateX(100px);
+
 }
 
-.card:hover {
+li .card:hover {
   transform: translateY(-1rem);
 }
 
-.card-list .card:not(:first-child) {
-  margin-left: -140px;
+.card-list li:not(:first-child) {
+  margin-left: -130px;
 }
 
 time {
@@ -485,6 +494,7 @@ article h2 {
   border: 0;
   display: inline-block;
   cursor: pointer;
+  height: 3em;
 }
 
 article h2:hover {
@@ -542,31 +552,6 @@ article p {
   border-color: var(--bluetiful);
 }
 
-/* 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-*/
 /* Footer */
 .footer {
   --footer-width: 100%;
