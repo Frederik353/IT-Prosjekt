@@ -36,7 +36,7 @@ body {
   --background: #ffffff;
   --bodybackground: #f7f7f7;
   --neutral: #a7a7a74d;
-  --navhover: #242424;
+  --navhover: #707070;
   --invert: 0%;
   --light-text: rgba(0, 0, 0, 0.7);
   --footer-color: #f5f5f5;
@@ -464,7 +464,7 @@ li {
     transition: 0.3s;
 
 }
-.item:hover ~ li{
+.card-list .item:hover ~ li .card{
   transform: translateX(100px);
 
 }
@@ -495,6 +495,10 @@ article h2 {
   display: inline-block;
   cursor: pointer;
   height: 3em;
+}
+
+.card h2{
+  margin-bottom: 0px;
 }
 
 article h2:hover {
@@ -774,3 +778,16 @@ article p {
   -webkit-transition: all 200ms linear;
   transition: all 200ms linear;
 }
+
+
+
+
+/* 3d modell banner */
+.colorbanner{
+  background-color: var(--footer-color);
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  height: 75vh;
+  width: 100%;
+}
+
