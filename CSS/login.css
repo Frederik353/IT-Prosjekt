@@ -4,13 +4,13 @@
   height: 100vh;
   width: 100vw;
 }
-.login-picture {
+.login-side {
   display: flex;
   flex-direction: row;
   height: 100%;
   overflow: hidden;
 }
-.login-picture > img {
+.login-side > img {
   object-fit: cover;
   width: 60vw;
 }
