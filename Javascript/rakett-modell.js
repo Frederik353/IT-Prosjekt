@@ -1,14 +1,14 @@
 
-let scene, camera, render, renderer, stars, starGeometry, rocket;
+let scene, camera, render, renderer, stars, starGeometry;
 
 
 function init() {
   // setter opp scene
     scene = new THREE.Scene()
   // setter oppkamera
-    camera = new THREE.PerspectiveCamera(50, window.innerWidth/window.innerHeight,1,1000)
+    camera = new THREE.PerspectiveCamera(50, 600/400,1,1000)
     camera.position.x = 0
-    camera.position.y = 40
+    camera.position.y = 0 // 40
     camera.position.z = 60
 
 
@@ -25,7 +25,7 @@ function init() {
     light = new THREE.PointLight(0xc4c4cc4, 10)
     light.position.set(0, 300, 500)
     scene.add(light)
-
+ 
     light2 = new THREE.PointLight(0xc4c4c4, 10)
     light.position.set(500000, 500, 100)
     scene.add(light2)
@@ -38,24 +38,22 @@ function init() {
     light.position.set(-5000, 300, 0)
     scene.add(light4)
 
-    container = document.getElementById( "canvas" );
+    container = document.getElementById( 'canvas' );
     document.body.appendChild( container );
 
     // setter opp renderer
     renderer = new THREE.WebGLRenderer({antialias: true})
     renderer.setSize(600,400)
     
-    // setter opp kontroller med orbitcontrols sånn at man kan bevege på modellen med musen
-    // controls = new THREE.OrbitControls(camera, renderer.domElement);
-    // controls.autoRotate = true;
-    // container.appendChild( renderer.domElement );
+
+    container.appendChild( renderer.domElement );
     // var controls = new THREE.OrbitControls( camera );
 
     let loader = new THREE.GLTFLoader()
-    loader.load('./3d-obj-loader/assets/scene.gltf', function(gltf){
+    loader.load('../3d-obj-loader/assets/scene.gltf', function(gltf){
         rocket = gltf.scene.children[0]
         // flytter modellen nermere midten av skjermen
-        rocket.position.y = -15
+        rocket.position.y = -17
         rocket.position.z = 10
         // legger til modellen på scenen
         scene.add(gltf.scene)
@@ -76,7 +74,7 @@ function init() {
         starGeometry.vertices.push(star);
       }
       // legger til bilde over stjerne geometrien i steden for å lage tusenvis av kuleformer som ville brukt alt for mye prossesor kraft
-      let sprite = new THREE.TextureLoader().load( 'dot.png' );
+      let sprite = new THREE.TextureLoader().load( './Pictures/dot.png' );
       let starMaterial = new THREE.PointsMaterial({
         color: 0xaaaaaa,
         size: 0.7,
@@ -85,16 +83,9 @@ function init() {
 
       stars = new THREE.Points(starGeometry,starMaterial);
       scene.add(stars);
-
-      // window.addEventListener("resize", onWindowResize, false);
-
       animate(); 
-    }
-    function onWindowResize() {
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
 }
+
 
 function animate() {
     starGeometry.vertices.forEach(p => {

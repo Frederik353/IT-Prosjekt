@@ -58,16 +58,6 @@ function sortlang(x){
   console.log(searchlist)
 
   var display = [];
-  // if(res.length > 0){
-  //   for(var i = 0; i < searchlist.length; ++i){
-  //   if(searchlist[i].matches(res)){
-  //       display.push(searchlist[i]);
-  //       console.log("daskjhjdakj")
-  //     }
-  //   }
-  // }
-  
-
   display.push(document.getElementsByClassName(res));
   
   // viser alt i display
@@ -99,31 +89,13 @@ function sortlang(x){
     }
     activelang = activelang.filter(el => {return el != null && el != '';});
     
-
     for(var i = 0; i < buttons.length; i++){
       if(buttons[i].classList.contains("active")){
         buttons[i].classList.remove("active");
       }
     }
   }
-
-
-
-  // document.getElementById('search-bar').value = "search";
 }
-
-
-
-
-
-// $(".category-button").click(function() {
-//   if($(this).hasClass("active")){
-//     $(this).removeClass("active");
-//   }
-//   else{ 
-//     $(this).addClass("active");
-//   }
-// });
 
 
 
