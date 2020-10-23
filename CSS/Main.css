@@ -806,6 +806,7 @@ article p {
 }
 
 #text-rakettbanner{
+  color: var(--text-color);
   position: relative;
   right: 10px;
   margin: 3rem 5rem 3rem auto;
